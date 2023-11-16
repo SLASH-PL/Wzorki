@@ -1,8 +1,9 @@
-﻿using System.Threading.Channels;
+﻿using System;
 
-class iks
+class Program
 {
     const char CHAR = '*';
+
     static void Star() => Console.Write(CHAR);
     static void StarLn() => Console.WriteLine(CHAR);
     static void Space() => Console.Write(" ");
@@ -17,45 +18,35 @@ class iks
         //górna połówka
         for (int i = 0; i < n / 2; i++)
         {
-            for (int j = 0; j < i; j++) //spacje przed
-            {
+            for (int j = 0; j < i; j++)
                 Space();
-            }
             Star();
-            for (int j = 0; j < n - 2 - 2 * i; j++) //spacje w środku
-            {
+            for (int j = 0; j < n - 2 - 2 * i; j++)
                 Space();
-            }   
             StarLn();
         }
-        
+
         //pojedyncza gwiazdka w środku
         for (int i = 0; i < n / 2; i++)
-        {
             Space();
-        }
         StarLn();
 
         //dolna połówka, symetrycznie do górnej
-        for (int i = n / 2; i > 0; i--)
+        for (int i = n / 2 - 1; i >= 0; i--)
         {
-            for (int j = i - 1; j > 0; j--) //spacje przed
-            {
+            for (int j = 0; j < i; j++)
                 Space();
-            }
             Star();
-            for (int j = 0; j < n - 2 * i; j++) //spacje w środku
-            {
+            for (int j = 0; j < n - 2 - 2 * i; j++)
                 Space();
-            }
             StarLn();
         }
-
     }
 
     static void Main(string[] args)
     {
-        int x = 7;
-        LiteraX(x);
+        LiteraX(11);
+        Console.WriteLine("------------");
+        LiteraX(8);
     }
 }
