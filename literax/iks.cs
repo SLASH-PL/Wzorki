@@ -55,7 +55,9 @@ class iks
 
     static void Main(string[] args)
     {
-        int x = 7;
+        string input = Console.ReadLine();
+        Console.Clear();
+        int x = int.Parse(input);
         LiteraX(x);
     }
 }
