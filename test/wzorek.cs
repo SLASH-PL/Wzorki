@@ -10,7 +10,7 @@
     static void Wzorek(int n)
     {
         if (n < 3) return;
-        if (n % 2 == 0) n = n + 1;
+        if (n % 2 == 0) n = n - 1;
 
         //top half
         for (int i = 0; i < n / 2; i++)
